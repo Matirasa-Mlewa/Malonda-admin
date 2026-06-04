@@ -1,8 +1,8 @@
 {
-  "name": "malonda-admin",
+  "name": "malonda-app-admin",
   "version": "1.0.0",
   "private": true,
-  "description": "Malonda Admin Panel — Fraud Prevention & Marketplace Management",
+  "description": "Malonda App - Admin Panel",
   "engines": { "node": "20.x" },
   "dependencies": {
     "react": "^18.2.0",
