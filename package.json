@@ -2,7 +2,7 @@
   "name": "malonda-app-admin",
   "version": "1.0.0",
   "private": true,
-  "description": "Malonda App - Admin Panel",
+  "description": "Malonda App Admin Panel",
   "engines": { "node": "20.x" },
   "dependencies": {
     "react": "^18.2.0",
@@ -10,8 +10,7 @@
     "react-router-dom": "^6.21.0",
     "react-hot-toast": "^2.4.1",
     "chart.js": "^4.4.1",
-    "react-chartjs-2": "^5.2.0",
-    "date-fns": "^3.0.6"
+    "react-chartjs-2": "^5.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",

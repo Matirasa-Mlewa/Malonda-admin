@@ -5,5 +5,4 @@ export default defineConfig({
   plugins: [react()],
   server: { port: 3001, open: true },
   build: { outDir: 'build', sourcemap: false },
-  resolve: { extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'] },
 })
