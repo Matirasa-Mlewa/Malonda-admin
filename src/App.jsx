@@ -17,19 +17,23 @@ function ProtectedRoute({ children }) {
   return isAuthenticated ? children : <Navigate to="/login" replace />
 }
 
-function AppRoutes() {
+function PublicRoute({ children }) {
   const { isAuthenticated } = useAdmin()
+  return isAuthenticated ? <Navigate to="/" replace /> : children
+}
+
+function AppRoutes() {
   return (
     <Routes>
-      <Route path="/login" element={isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />} />
+      <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
       <Route element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/verify" element={<SellerVerification />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/fraud" element={<FraudReports />} />
+        <Route path="/"             element={<Dashboard />} />
+        <Route path="/users"        element={<Users />} />
+        <Route path="/verify"       element={<SellerVerification />} />
+        <Route path="/products"     element={<Products />} />
+        <Route path="/fraud"        element={<FraudReports />} />
         <Route path="/transactions" element={<Transactions />} />
-        <Route path="/disputes" element={<Disputes />} />
+        <Route path="/disputes"     element={<Disputes />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
@@ -45,9 +49,9 @@ export default function App() {
           position="top-right"
           toastOptions={{
             duration: 3500,
-            style: { fontSize: 13, borderRadius: 8, padding: '10px 14px' },
-            success: { style: { background: '#e1f5ee', color: '#0f6e56', border: '1px solid #a3d9c3' } },
-            error:   { style: { background: '#fcebeb', color: '#a32d2d', border: '1px solid #e8b4b4' } },
+            style: { fontSize:13, borderRadius:8, padding:'10px 14px' },
+            success: { style: { background:'#e1f5ee', color:'#0f6e56', border:'1px solid #a3d9c3' } },
+            error:   { style: { background:'#fcebeb', color:'#a32d2d', border:'1px solid #e8b4b4' } },
           }}
         />
       </AdminProvider>
