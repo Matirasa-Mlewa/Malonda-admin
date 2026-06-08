@@ -5,11 +5,11 @@ import Topbar from './Topbar'
 
 export default function AdminLayout() {
   return (
-    <div className="admin-layout">
+    <div style={{ display:'flex', height:'100vh', overflow:'hidden' }}>
       <Sidebar />
-      <div className="admin-main">
+      <div style={{ flex:1, display:'flex', flexDirection:'column', overflow:'hidden', minWidth:0 }}>
         <Topbar />
-        <main className="admin-content">
+        <main style={{ flex:1, overflowY:'auto', padding:20, background:'#f4f3ef' }}>
           <Outlet />
         </main>
       </div>
